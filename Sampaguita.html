@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <title>Juan Karlos</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
+            overflow: hidden;
+            padding: 0 10px;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            position: relative;
+        }
+
+        .image-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .playbar {
+            flex: 1;
+            max-width: 800px;
+            margin-left: 140px;
+        }
+
+        .playbar video {
+            width: 100%;
+            height: auto;
+            max-width: 1000px;
+            height: 500px;
+        }
+
+        .lyrics {
+            width: 100%;
+            max-width: 500px;
+            font-size: 1rem;
+            line-height: 2;
+            max-height: 80%;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+
+        .lyrics::-webkit-scrollbar {
+            display: none;
+        }
+
+        .lyrics {
+            scroll-behavior: smooth;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+
+            .lyrics {
+                max-width: 600px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .playbar {
+                max-width: 1024px;
+            }
+
+            .lyrics {
+                max-width: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container" onclick="goToMainPage()">
+            <img src="image/sampaguita.jpg" alt="Song Art">
+        </div>
+        <div class="playbar">
+            <video id="video-player" controls autoplay>
+                <source src="videos/juan karlos - Sampaguita (Official Music Video) ft. Gloc-9.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="lyrics">
+            <p id="lyrics">
+                🎵 [Verse 1: Gloc-9]
+                O aking sinta
+                Pasensya ka na kung ang makapiling ka ay hindi ko magawa
+                Hawak-hawak lagi ay larawan ng iyong mukha
+                Napakahirap ang bumuhat ng lungkot na malubha
+                Sa tuwing may okasyon ay wala ako palagi
+                Kay dami ng tao  ng kailangan kong mabawi
+                Nagdaang mga pasko, bagong taon at araw
+                Ng mga pusong 'di kita makuhang madalaw
+                At maabutan man lang ng paborito mong bulaklak
+                Pag kausap ka'y hindi ko mapigilang maiyak
+                Sa mundong 'di sigurado, isa lamang ang tiyak
+                Mag-isa ka lang ng isinilang mong ating anak
+                Nangungulila hanggang sa tumila ang ulan
+                Mga sana na mahirap ng bilangin kung ilan
+                Sa pagkain sa labas ay 'di kita masabayan
+                At sa paglubog ng araw di kita matabihan
+                <br><br>
+                [Hook: JK Labajo]
+                Kung kahit saan man mapadpad
+                Sayo pa rin ako babalik, giliw
+                Sa halimuyak ng 'yong paboritong sampaguita, ooh
+                Sa halimuyak ng 'yong
+                <br><br>
+                [Verse 2: Gloc-9]
+                Anak, kaarawan mo na ulit
+                Wag mong kalimutang suotin ang bago mong damit
+                Tandaan mo lagi kahit 'di tayo magkalapit
+                Naaalala ka ni tatay t'wing ako'y pumipikit
+                Patawarin mo ako, anak, kung hindi kita
+                Masamahang magpalipad ng gawa mong saranggola
+                O lumangoy sa batis na katulad ng iba
+                At mapunasan ka ng pawis kapag nagbibisikleta
+                Magbutones ng uniporme mo sa unang araw
+                Ng pasok sa eskwela, puso ko'y nag-uumapaw
+                Sa tuwa dahil ganyan-ganyan ako noon
+                Ngunit agad napapaluha pag ika'y nagtatanong
+                "Kailan ka uuwi?" Sa'kin ay binubulong
+                Sagot na, "Bukas na, anak" ay palaging nakakulong
+                Sa pagtakbo'y madadapa, minsan ay masasaktan
+                Pero sugat mo sa tuhod hindi ko mahalikan
+                [Hook: JK Labajo]
+                Kahit saan man mapadpad
+                Sayo pa rin ako babalik giliw, oh
+                Sa halimuyak ng 'yong paboritong sampaguita
+                Sa halimuyak ng 'yong paboritong sampaguita
+                Sa halimuyak ng 'yong
+                <br><br>
+                [Verse 3: Gloc-9]
+                Dumating ng araw na aking pinakahihintay
+                Malapit nang magsimula ang aking paglalakbay
+                Pabalik sa'king pamilya kahit napakalayo
+                Mula sa lugar na para kumita ay dinayo
+                Lahat ng pasalubong ko ay nasa kahon na
+                Tsokolate at laruan, pati sabong panlaba
+                Eroplano'y lumapag na ako lamang mag-isa
+                Ang bibyahe pauwi para masurpresa sila
+                Kaso nang sumakay ako ng taxi ay para bang tila iba
+                Ang tingin sakin ng mama na sa manibela malayo akong dinala
+                Nung tanungin ko, "Teka muna, pare" ay bigla na lamang s'yang natawa
+                Nag-iba'ng aking kaba, teka bakit may pumasok pa na dalawa?
+                Hanggang hinawakan ako sa balikat ng isa na may tangan na patalim
+                Pilit inaagaw ang dala kong bag na pinakatatago ko ng palihim
+                Dahil ang laman nito ay ang lahat ng mga araw na ako;y nakatingin
+                Sa bituin kahit madilim pero bakit sa dulo ako pa rin ang bibiguin?
+                <br><br>
+                [Hook: JK Labajo]
+                Kahit saan man mapadpad
+                Sayo pa rin ako babalik, babalik, giliw
+                Sa halimuyak, sa halimuyak ng 'yong paboritong sampaguita, sampaguita
+                Sa halimuyak ng 'yong paboritong sampaguita
+                Sa halimuyak ng 'yong sampaguita🎵
+            </p>
+        </div>
+    </div>
+    <script>
+        function goToMainPage() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
