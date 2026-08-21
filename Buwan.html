@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <title>Juan Karlos</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
+            overflow: hidden;
+            padding: 0 10px;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            position: relative;
+        }
+
+        .image-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .playbar {
+            flex: 1;
+            max-width: 800px;
+            margin-left: 140px;
+        }
+
+        .playbar video {
+            width: 100%;
+            height: auto;
+            max-width: 1000px;
+            height: 500px;
+        }
+
+        .lyrics {
+            width: 100%;
+            max-width: 500px;
+            font-size: 1rem;
+            line-height: 2;
+            max-height: 80%;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+
+        .lyrics::-webkit-scrollbar {
+            display: none;
+        }
+
+        .lyrics {
+            scroll-behavior: smooth;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+
+            .lyrics {
+                max-width: 600px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .playbar {
+                max-width: 1024px;
+            }
+
+            .lyrics {
+                max-width: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container" onclick="goToMainPage()">
+            <img src="image/buwan.jpg" alt="Song Art">
+        </div>
+
+        <div class="playbar">
+            <video id="video-player" controls autoplay>
+                <source src="videos/juan karlos - Buwan (Official Music Video).mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="lyrics">
+            <p id="lyrics">
+                🎵 [Verse 1]
+                Ako'y sa'yo, ikaw ay akin
+                Ganda mo sa paningin
+                Ako ngayo'y nag-iisa
+                Sana ay tabihan na
+                <br><br>
+                [Chorus]
+                Sa ilalim ng puting ilaw
+                Sa dilaw na buwan
+                Pakinggan mo ang aking sigaw
+                Sa dilaw na buwan
+                <br><br>
+                [Verse 2]
+                Ayokong mabuhay nang malungkot
+                Ikaw ang nagpapasaya
+                At makakasama hanggang sa pagtanda
+                Halina't tayo'y humiga (Saan kaya?)
+                <br><br>
+                [Chorus]
+                Sa ilalim ng puting ilaw
+                Sa dilaw na buwan
+                Pakinggan mo ang aking sigaw
+                Sa dilaw na buwan, oh
+                <br><br>
+                [Instrumental Break]
+                <br><br>
+                [Bridge]
+                Ang iyong ganda'y umaabot sa buwan
+                Ang tibok ng puso'y dinig sa kalawakan
+                At bumabalik dito sa akin
+                Ikaw ang mahal, ikaw lang ang mamahalin
+                Pakinggan ang puso't damdamin
+                Damdamin aking damdamin
+                <br><br>
+                [Chorus]
+                Sa ilalim ng puting ilaw (Ang iyong ganda'y)
+                Sa dilaw na buwan (Umaabot sa buwan)
+                Pakinggan mo ang aking sigaw (Ang tibok ng puso'y)
+                Sa dilaw na buwan (Rinig sa kalawakan)
+                Ta-ta-ah
+                Sa ilalim ng puting ilaw (Ang iyong ganda'y)
+                Sa dilaw na buwan (Umaabot sa buwan)
+                La-ah, pakinggan mo ang aking sigaw (Ang tibok ng puso'y)
+                Sa dilaw na buwan (Rinig sa kalawakan)
+                <br><br>
+                [Outro]
+                La-ah
+                La-la-la-la-la
+                La-la-la-la-la-la
+                Pakinggan, pakingan, pakingan
+                Pakinggan mo ang aking sigaw o sinta
+                Sa dilaw na buwan🎵
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function goToMainPage() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
